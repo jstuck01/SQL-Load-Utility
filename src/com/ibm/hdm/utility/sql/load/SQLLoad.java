@@ -52,17 +52,17 @@ public class SQLLoad {
 		
 		if(config.isUseThreads()) {
 			ExecutorService pool = Executors.newFixedThreadPool(config.getMaxThreadCount());
-		    Set<Future<HashMap>> set = new HashSet<Future<HashMap>>();
+		    Set<Future<HashMap<String, String>>> set = new HashSet<Future<HashMap<String, String>>>();
 			while(sqlIterator.hasNext()) {
 				Entry<String, String> sql = sqlIterator.next();
-				Callable<HashMap> callable = new Request(sql.getValue(), sql.getKey(), executionSequence++, config);
-				Future<HashMap> future = (Future<HashMap>)pool.submit(callable);
+				Callable<HashMap<String, String>> callable = new Request(sql.getValue(), sql.getKey(), executionSequence++, config);
+				Future<HashMap<String, String>> future = (Future<HashMap<String, String>>)pool.submit(callable);
 				set.add(future);
 			}
 			
 			HashMap<String, String> result = null;
 			
-		    for (Future<HashMap> future : set) {
+		    for (Future<HashMap<String, String>> future : set) {
 		    		try {
 			    		result = (HashMap<String, String>) future.get();
 			    		resultsArrayList.add(result);

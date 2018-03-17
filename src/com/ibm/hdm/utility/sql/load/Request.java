@@ -32,7 +32,7 @@ import java.util.concurrent.Callable;
  * @author Jeff Tuck
  */
 
-public class Request implements Callable<HashMap> {
+public class Request implements Callable<HashMap<String, String>> {
 	
 	private ConfigurationBean config = null;
 	private Connection connection = null;
@@ -61,7 +61,7 @@ public class Request implements Callable<HashMap> {
 	 * @return A Hashmap containing the results of the SQL execution such as start time, end time
 	 * SQL file name that contained the SQL executed, etc...
 	 */
-	protected HashMap executeSQL() {
+	protected HashMap<String, String> executeSQL() {
 		HashMap<String, String> resultsMap = new HashMap<String, String>();
 		int returnCode = 0;
 		String status = "success";
@@ -194,8 +194,8 @@ public class Request implements Callable<HashMap> {
 	 * @see java.util.concurrent.Callable#call()
 	 */
 	@Override
-	public HashMap call() throws Exception {
-		HashMap resultsMap = executeSQL(); 
+	public HashMap<String, String> call() throws Exception {
+		HashMap<String, String> resultsMap = executeSQL(); 
 		return resultsMap;
 	}
 
