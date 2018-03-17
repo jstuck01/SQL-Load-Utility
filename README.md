@@ -4,7 +4,7 @@ The SQL Load Utility is a Db2 tool to execute SQL statements in batch and captur
 
 
 ## Supported Databases
-Currently, the SQL Load Utility supports Db2 based repositories such as the following:
+Currently, the SQL Load Utility supports Db2 based repositories such as:
 * Db2
 * Db2 Warehouse
 * BigSQL
