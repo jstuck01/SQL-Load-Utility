@@ -53,7 +53,18 @@ Before executing the SQL Load Utility, a configuration needs to be completed.  B
 
 Config Variable | Example Value | Description | Required
 ----------------|---------------|-------------|----------
-jdbc_driver | com.ibm.db2.jcc.DB2Driver | JDBC Driver Class Name | YES  
+jdbc_driver | com.ibm.db2.jcc.DB2Driver | JDBC Driver Class Name. | YES  
+database_host_name | myDb2Warehouse.ibmcloud.com | The host name of the database. | YES
+database_port | 50000 | The service port number of the database. | YES
+database_name | BLUDB | The name of the database. | YES
+database_username | myUserName | The user name to use when connecting to the database. | YES
+database_password | myUserPassword | The password of the user connecting to the database. | YES
+use_ssl_connection | true | TRUE will use SSL / TLS.  False will use clear text. | YES
+parallel_execution | false | False is serial execution.  True is parallel execution. | YES
+parallel_execution_max_connections | 5 | The number that represents the MAXIMUM number of threads that will be used | YES
+sql_file_directory | SQL-DIRECTORY | Directory name where SQL files are located.  Absolute or relative path.  The relative path root is the directory from which the utility was executed. | YES
+
+  
  	
 
 
