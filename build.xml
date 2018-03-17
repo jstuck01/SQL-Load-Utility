@@ -3,7 +3,9 @@
     <!-- ANT 1.7 is required -->
 	<property name="dir.projectDir" value="."/>
     <property name="dir.workspace" value="${dir.projectDir}/.."/>
+	<property name="dir.src" value="${dir.projectDir}/src"/>
 	<property name="dir.build" value="${dir.projectDir}/build"/>
+	<property name="dir.jar" value="${dir.projectDir}/jar"/>
 	<property name="dir.dist" value="${dir.projectDir}/dist"/>
 	<property name="dir.stage" value="${dir.projectDir}/stage"/>
 	<property name="dir.artifacts" value="${dir.projectDir}/artifacts"/>
@@ -12,19 +14,27 @@
 	<property name="file.zipfile" value="SQL_Load_Utility.zip"/>
 	
 	<target name="build" depends="create_run_jar, dist"/>
+	
+	
 		
     <target name="create_run_jar" depends="clean, init">
-        <jar destfile="${dir.build}/${file.jarfile}" filesetmanifest="mergewithoutmain">
+	    	<javac srcdir="${dir.src}"
+	    	         destdir="${dir.build}"
+	    	         debug="off"
+	    	         source="1.8"
+	    			includeantruntime="false"/>
+    	
+        <jar destfile="${dir.jar}/${file.jarfile}" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="com.ibm.hdm.utility.sql.load.SQLLoad"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="${dir.projectDir}/bin"/>
+            <fileset dir="${dir.build}"/>
             <zipfileset excludes="META-INF/*.SF" src="${dir.artifacts}/${file.db2JDBC}"/>
         </jar>
     		<copy includeemptydirs="false" todir="${dir.stage}">
-	      	<fileset dir="${dir.build}">
-	        	<exclude name="**/*.java" />
+	      	<fileset dir="${dir.jar}">
+	        		<exclude name="**/*.java" />
 	      	</fileset>
 	    </copy>
     </target>
@@ -39,6 +49,7 @@
 	<target name="init">
 		<mkdir dir="${dir.build}" />
 		<mkdir dir="${dir.stage}" />
+		<mkdir dir="${dir.jar}" />
 		<copy includeemptydirs="false" todir="${dir.stage}">
 	      	<fileset dir="${dir.artifacts}">
 	        		<exclude name="**/*.java" />
@@ -52,5 +63,6 @@
 	  	<delete dir="${dir.build}" />
 		<delete dir="${dir.stage}" />
 		<delete dir="${dir.dist}" />
+		<delete dir="${dir.jar}" />
 	</target>
 </project>
