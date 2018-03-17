@@ -32,16 +32,16 @@ Both on premise and cloud based Db2 repositories are supported.
  	
  * Examples of report names after SQL execution:
  
- 			*Results_Parellel_Threads-10_12072016_042940.csv*
+ 		*Results_Parellel_Threads-10_12072016_042940.csv*
  	
- 			*Results_Serial_12082016_111624.csv*
+ 		*Results_Serial_12082016_111624.csv*
 
 ## Getting Started
 Pull the repository and execute the ant build script.  This will result in a ZIP file being created in the "dist" directory.  Expand the ZIP file.  After expanding the ZIP file, fill out the configuration file (see below) and execute the shell script appropriate for your platform. 
 
  
 ## Distribution and Packaging
- The SQL Load Utility is distributed as a ZIP file.  After decompressing the ZIP file, you will find the following:
+ The SQL Load Utility is distributed as a ZIP file.  After you decompress the ZIP file, you will find the following:
  * config.props (Required configuration file)
  * SQL_Load_Utility.jar (Executable jar file)
  * run.sh (bash shell script)
