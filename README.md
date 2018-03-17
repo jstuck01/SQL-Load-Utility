@@ -49,7 +49,11 @@ Pull the repository and execute the ant build script.  This will result in a ZIP
  * run.bat (Windows batch file) 
 
 ## Configuration
-Before executing the SQL Load Utility, you need to provide the host name, port and name of the database to which you want to connect to.  You also need to provide details about 
+Before executing the SQL Load Utility, a configuration needs to be completed.  Below is a table that defines the configuration file (config.props) parameters.
+
+Config Variable | Example Value | Description | Required
+----------------|---------------|-------------|----------
+jdbc_driver | com.ibm.db2.jcc.DB2Driver | JDBC Driver Class Name | YES  
  	
 
 
