@@ -31,6 +31,12 @@ Both on premise and cloud based Db2 repositories are supported.
  		*Results_Parellel_Threads-10_12072016_042940.csv*
  		*Results_Serial_12082016_111624.csv*
  
+ 
+ ## Distribution and Packaging
+ The SQL Load Utility is distributed as a ZIP file.  After decompressing the ZIP file, you will find the following:
+ * config.props 
+ 	- Required configuration file
+ * 
 
 
 ## Getting Started
