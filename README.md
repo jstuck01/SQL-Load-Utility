@@ -1,5 +1,5 @@
 # SQL-Load-Utility
-The SQL Load Utility is a Db2 tool to execute SQL statements in batch and capture the corresponding times associated with each SQL execution process.  Both serial and parallel execution processes are supported.  Serial execution can be used to simply measure query processor performance.  Parallel execution allows for the simulation of multiple users executing SQL against a repository and measure the query times under multi-user workloads.
+The SQL Load Utility is a Db2 tool to execute SQL statements in batch and capture the corresponding process times associated with each SQL execution.  Both serial and parallel execution processes are supported.  Serial execution can be used to simply measure query processor performance.  Parallel execution allows for the simulation of multiple users executing SQL against a repository and measure the query times under multi-user workloads.
 
 
 
@@ -63,11 +63,5 @@ use_ssl_connection | true | TRUE will use SSL / TLS.  False will use clear text.
 parallel_execution | false | False is serial execution.  True is parallel execution. | YES
 parallel_execution_max_connections | 5 | The number that represents the MAXIMUM number of threads that will be used | YES
 sql_file_directory | SQL-DIRECTORY | Directory name where SQL files are located.  Absolute or relative path.  The relative path root is the directory from which the utility was executed. | YES
-
-  
- 	
-
-
-
 
  
