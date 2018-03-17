@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="build" name="SQL Load Utility Distribution Build">
+    <!-- ANT 1.7 is required -->
+	<property name="dir.projectDir" value="."/>
+    <property name="dir.workspace" value="${dir.projectDir}/.."/>
+	<property name="dir.build" value="${dir.projectDir}/build"/>
+	<property name="dir.dist" value="${dir.projectDir}/dist"/>
+	<property name="dir.stage" value="${dir.projectDir}/stage"/>
+	<property name="dir.artifacts" value="${dir.projectDir}/artifacts"/>
+	<property name="file.db2JDBC" value="db2jcc4.jar"/>
+	<property name="file.jarfile" value="SQL_Load_Utility.jar"/>
+	<property name="file.zipfile" value="SQL_Load_Utility.zip"/>
+	
+	<target name="build" depends="create_run_jar, dist"/>
+		
+    <target name="create_run_jar" depends="clean, init">
+        <jar destfile="${dir.build}/${file.jarfile}" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.ibm.hdm.utility.sql.load.SQLLoad"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.projectDir}/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.artifacts}/${file.db2JDBC}"/>
+        </jar>
+    		<copy includeemptydirs="false" todir="${dir.stage}">
+	      	<fileset dir="${dir.build}">
+	        	<exclude name="**/*.java" />
+	      	</fileset>
+	    </copy>
+    </target>
+	
+	<target name="dist">
+		<zip destfile="${dir.dist}/${file.zipfile}"
+		    basedir="${dir.stage}"
+			preserve0permissions="true"
+		  />
+	</target>
+	
+	<target name="init">
+		<mkdir dir="${dir.build}" />
+		<mkdir dir="${dir.stage}" />
+		<copy includeemptydirs="false" todir="${dir.stage}">
+	      	<fileset dir="${dir.artifacts}">
+	        		<exclude name="**/*.java" />
+	      		<exclude name="${file.db2JDBC}" />
+	      	</fileset>
+	    </copy>
+		<chmod file="${dir.stage}/run.sh" perm="ugo+x"/>
+	</target>
+	
+	<target name="clean">
+	  	<delete dir="${dir.build}" />
+		<delete dir="${dir.stage}" />
+		<delete dir="${dir.dist}" />
+	</target>
+</project>
