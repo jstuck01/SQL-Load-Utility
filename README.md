@@ -1,12 +1,12 @@
 # SQL-Load-Utility
-The SQL Load Utility is a Db2 tool to execute SQL statements in batch and capture the corresponding process times associated with each SQL execution.  Both serial and parallel execution processes are supported.  Serial execution can be used to simply measure query processor performance.  Parallel execution allows for the simulation of multiple users executing SQL against a repository and measure the query times under multi-user workloads.
-
+SQL Load Utility is a Db2 tool which executes multiple SQL statements and captures the corresponding process times associated with each SQL execution cycle.  Both serial and parallel execution processes are supported.  Serial execution can be used to simply measure query performance.  Parallel execution allows for the simulation of multiple users submitting SQL against a repository while capturing and measuring the query times under these multi-user workloads.
 
 
 ## Supported Databases
-Currently, the SQL Load Utility supports Db2 based repositories such as:
+SQL Load Utility supports Db2 based repositories such as:
 * Db2
 * Db2 Warehouse
+* IBM Integrated Analytics System
 * BigSQL
 
 Both on premise and cloud based Db2 repositories are supported.
@@ -57,7 +57,7 @@ NOTE:  The Stack Trace column will capture any SQL errors encountered.  For exam
   
 
 ## Getting Started
-Pull the repository and execute the ant build script.  This will result in a ZIP file being created in the "dist" directory.  Expand the ZIP file.  After expanding the ZIP file, fill out the configuration file (see below) and execute the shell script appropriate for your platform. 
+Pull the repository and execute the ant build script.  This will result in a ZIP file being created in the "dist" directory.  Expand the ZIP file.  After expanding the ZIP file, edit the configuration file (see below) and execute the shell script appropriate for your platform. 
 
  
 ## Distribution and Packaging
