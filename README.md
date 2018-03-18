@@ -38,9 +38,9 @@ Both on premise and cloud based Db2 repositories are supported.
  	
 * Examples of report names after SQL execution:
  
- 		*Results_Parellel_Threads-10_12072016_042940.csv*
+ 		Results_Parellel_Threads-10_12072016_042940.csv
  	
- 		*Results_Serial_12082016_111624.csv*
+ 		Results_Serial_12082016_111624.csv
  		
 * Here is a sample of what is captured in a process result CSV file.
 
@@ -53,7 +53,7 @@ Query1.sql | success | bigsql | 3 | 21:04:43 | 21:04:46 | 0:00:02	 |
 NOTE:  The Stack Trace column will capture any SQL errors encountered.  For example:
 
 
- 	     *com.ibm.db2.jcc.am.SqlException: DB2 SQL Error: SQLCODE=-313, SQLSTATE=07004, SQLERRMC=null, DRIVER=4.20.4*
+ 	    com.ibm.db2.jcc.am.SqlException: DB2 SQL Error: SQLCODE=-313, SQLSTATE=07004, SQLERRMC=null, DRIVER=4.20.4
   
 
 ## Getting Started
