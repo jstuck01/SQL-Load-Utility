@@ -150,7 +150,7 @@ public class SQLLoad {
 	private static String getReportFileName(boolean useThreads, int maxThreadCount) {
 		String fileName = "";
 		String processTypeIdentifier = "";
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddyyyy_hhmmss");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMddyyyy_hhmmssa");
 		String date = simpleDateFormat.format(System.currentTimeMillis());
 		if(useThreads) {
 			processTypeIdentifier = "Parallel_Threads-" + maxThreadCount;
