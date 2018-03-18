@@ -11,6 +11,11 @@ Currently, the SQL Load Utility supports Db2 based repositories such as:
 
 Both on premise and cloud based Db2 repositories are supported.
 
+## System Requirements
+* Ant 1.7 is required to build the project
+* Java 1.8
+* Maximum thread count setting (See "Configuration" below) will have an impact on memory and CPU requirements.  I would recommend starting in increments of 5 or 10 threads.
+
 
 ## Technical Details
 **Measuring Query Times**
