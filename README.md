@@ -43,11 +43,12 @@ Both on premise and cloud based Db2 repositories are supported.
  		*Results_Serial_12082016_111624.csv*
  		
 * Here is a sample of what is captured in a process result CSV file.
+
 SQL Filename	 | Status |	User Name |	Execution Sequence | Start Time | End Time | Elapsed Time | Stack Trace
 -------------|--------|------------|--------------------|------------|----------|--------------|-------------
-Query2.sql | success | bigsql | 1 | 21:04:23 | 21:04:26 | 0:00:03	 
-Query3.sql | success | bigsql | 2 | 21:04:27 | 21:04:43 | 0:00:16	 
-Query1.sql | success | bigsql | 3 | 21:04:43 | 21:04:46 | 0:00:02	 
+Query2.sql | success | bigsql | 1 | 21:04:23 | 21:04:26 | 0:00:03	 | 
+Query3.sql | success | bigsql | 2 | 21:04:27 | 21:04:43 | 0:00:16	 |
+Query1.sql | success | bigsql | 3 | 21:04:43 | 21:04:46 | 0:00:02	 |
 
   
 
