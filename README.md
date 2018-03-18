@@ -22,25 +22,34 @@ Both on premise and cloud based Db2 repositories are supported.
 * Elapsed time is measured from the client machine
 * Elapsed time starts when the SQL query is executed from the client.  
 	* Client connection overhead is NOT included in elapsed time as connection is made prior to the start of elapsed time
-* Elapsed time ends when the client receives response from server
+* Elapsed time ends when the client receives a response the from server
 
 **Defining SQL Queries**
- * SQL queries are executed from files contained in a directory
- * Utility will look in the configured directory for SQL files
- * Only one SQL statement per file supported
- * SQL statements should not be terminated with ";"
+* SQL queries are executed from files contained in a directory
+* Utility will look in the configured directory for SQL files
+* Only one SQL statement per file supported
+* SQL statements should not be terminated with ";"
  
- **Query Response Time Process Reports**
- * Results are stored in a CSV file which can easily be opened with Excel for analysis
- * Report file names have the following naming conventions:
+**Process Results**
+* Results are stored in a CSV file which can easily be opened with Excel for analysis
+* Result file names have the following naming conventions:
 
    		*Results_<Serial or Parallel>_<Threads Used>_<Date>_<Time>.csv*
  	
- * Examples of report names after SQL execution:
+* Examples of report names after SQL execution:
  
  		*Results_Parellel_Threads-10_12072016_042940.csv*
  	
  		*Results_Serial_12082016_111624.csv*
+ 		
+* Here is a sample of what is captured in a process result CSV file.
+SQL Filename	 | Status |	User Name |	Execution Sequence | Start Time | End Time | Elapsed Time | Stack Trace
+-------------|--------|------------|--------------------|------------|----------|--------------|-------------
+Query2.sql | success | bigsql | 1 | 21:04:23 | 21:04:26 | 0:00:03	 
+Query3.sql | success | bigsql | 2 | 21:04:27 | 21:04:43 | 0:00:16	 
+Query1.sql | success | bigsql | 3 | 21:04:43 | 21:04:46 | 0:00:02	 
+
+  
 
 ## Getting Started
 Pull the repository and execute the ant build script.  This will result in a ZIP file being created in the "dist" directory.  Expand the ZIP file.  After expanding the ZIP file, fill out the configuration file (see below) and execute the shell script appropriate for your platform. 
