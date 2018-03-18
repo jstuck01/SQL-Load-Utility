@@ -34,7 +34,7 @@ Both on premise and cloud based Db2 repositories are supported.
 * Results are stored in a CSV file which can easily be opened with Excel for analysis
 * Result file names have the following naming conventions:
 
-   		*Results_<Serial or Parallel>_<Threads Used>_<Date>_<Time>.csv*
+   		Results_<Serial or Parallel>_<Threads Used>_<Date>_<Time>.csv
  	
 * Examples of report names after SQL execution:
  
@@ -53,7 +53,7 @@ Query1.sql | success | bigsql | 3 | 21:04:43 | 21:04:46 | 0:00:02	 |
 NOTE:  The Stack Trace column will capture any SQL errors encountered.  For example:
 
 
- 	    com.ibm.db2.jcc.am.SqlException: DB2 SQL Error: SQLCODE=-313, SQLSTATE=07004, SQLERRMC=null, DRIVER=4.20.4
+ 	com.ibm.db2.jcc.am.SqlException: DB2 SQL Error: SQLCODE=-313, SQLSTATE=07004, SQLERRMC=null, DRIVER=4.20.4
   
 
 ## Getting Started
