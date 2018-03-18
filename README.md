@@ -50,6 +50,9 @@ Query2.sql | success | bigsql | 1 | 21:04:23 | 21:04:26 | 0:00:03	 |
 Query3.sql | success | bigsql | 2 | 21:04:27 | 21:04:43 | 0:00:16	 |
 Query1.sql | success | bigsql | 3 | 21:04:43 | 21:04:46 | 0:00:02	 |
 
+NOTE:  The Stack Trace column will capture any SQL errors encountered.  For example:
+
+*com.ibm.db2.jcc.am.SqlException: DB2 SQL Error: SQLCODE=-313, SQLSTATE=07004, SQLERRMC=null, DRIVER=4.20.4*
   
 
 ## Getting Started
