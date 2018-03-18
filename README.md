@@ -21,7 +21,7 @@ Both on premise and cloud based Db2 repositories are supported.
 **Measuring Query Times**
 * Elapsed time is measured from the client machine
 * Elapsed time starts when the SQL query is executed from the client.  
-	* Client connection overhead is NOT included in elapsed time as connection is made prior to the start of elapsed time
+* Client connection overhead is NOT included in elapsed time as connection is made prior to the start of elapsed time
 * Elapsed time ends when the client receives a response the from server
 
 **Defining SQL Queries**
