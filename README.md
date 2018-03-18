@@ -57,7 +57,7 @@ NOTE:  The Stack Trace column will capture any SQL errors encountered.  For exam
   
 
 ## Getting Started
-Pull the repository and execute the ant build script.  This will result in a ZIP file being created in the "dist" directory.  Expand the ZIP file.  After expanding the ZIP file, edit the configuration file (see below) and execute the shell script appropriate for your platform. 
+Pull the repository and execute the ant build script.  This will result in a ZIP file being created in the "dist" directory.  Expand the ZIP file, edit the configuration file (see below) and execute the shell script appropriate for your platform. 
 
  
 ## Distribution and Packaging
@@ -68,7 +68,7 @@ Pull the repository and execute the ant build script.  This will result in a ZIP
  * run.bat (Windows batch file) 
 
 ## Configuration
-Before executing the SQL Load Utility, a configuration needs to be completed.  Below is a table that defines the configuration file (config.props) parameters.
+Before executing the SQL Load Utility, the configuration file needs to be updated.  Below is a table that defines the configuration file (config.props) parameters.
 
 Config Variable | Example Value | Description | Required
 ----------------|---------------|-------------|----------
