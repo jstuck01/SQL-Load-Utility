@@ -176,12 +176,12 @@ public class SQLLoad {
 			System.out.println("The directory \"" + sqlDirectory + "\" was not found.  Edit the file config.props to correct.");
 			System.exit(-1);
 		}
-		for (int i = 0; i < listOfFiles.length; i++) {
-	      if (listOfFiles[i].isFile()) {
-        	sqlStamements.put(listOfFiles[i].getName(), sqlBuilder.readSQLFromFile(sqlDirectory + "/" + listOfFiles[i].getName()));
-	      } else if (listOfFiles[i].isDirectory()) {
-	        System.out.println("Found a Directory: " + listOfFiles[i].getName());
-	      }	
+		for(File file : listOfFiles) {
+			if(file.isFile()) {
+				sqlStamements.put(file.getName(), sqlBuilder.readSQLFromFile(sqlDirectory + "/" + file.getName()));
+			} else if(file.isDirectory()) {
+				System.out.println("Found a Directory: " + file.getName());
+			}
 		}
 		return sqlStamements;
 	}
