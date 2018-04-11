@@ -40,7 +40,7 @@ public class SQLBuilder {
 	 * @param fileName - The name of the file to read SQL from.
 	 * @return A string that contains the SQL.
 	 */
-	protected String readSQLFromFile(String fileName) {
+	public String readSQLFromFile(String fileName) {
 		String sql = "";
 		BufferedReader in;
 		try {
